@@ -1,10 +1,10 @@
 package Obras;
 
-public class ObraEstructura extends ObraDeArtes{
+public class ObraEscultura extends ObraDeArtes{
 	
 	private String material;
 	
-	public ObraEstructura(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
+	public ObraEscultura(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
 			int piezas, String descripcion, String material) {
 		
 		super(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion);
