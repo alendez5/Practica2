@@ -9,11 +9,11 @@ public abstract class ObraDeArtes {
 	private double precio;
 	private double altura;
 	private double peso;
-	private double piezas;
+	private int piezas;
 	private String descripcion;
 	
 	public ObraDeArtes(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
-			double piezas, String descripcion) {
+			int piezas, String descripcion) {
 		
 		this.id = id;
 		this.nombre = nombre;
@@ -30,8 +30,65 @@ public abstract class ObraDeArtes {
 
 	@Override
 	public abstract String toString();
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public String getAutor() {
+		return autor;
+	}
+
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+
+	public double getAltura() {
+		return altura;
+	}
+
+
+
+	public double getPeso() {
+		return peso;
+	}
+
+
+
+	public double getPiezas() {
+		return piezas;
+	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
 	
 
+	
 	
 
 }
