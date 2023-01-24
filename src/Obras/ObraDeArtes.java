@@ -2,6 +2,7 @@ package Obras;
 
 public abstract class ObraDeArtes {
 	
+	
 	private int id;
 	private String nombre;
 	private String autor;
