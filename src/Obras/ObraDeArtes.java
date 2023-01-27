@@ -28,10 +28,7 @@ public abstract class ObraDeArtes {
 		this.piezas = piezas;
 		this.descripcion = descripcion;
 		
-		int tamañoInicial = 1;
-		
-		array = new ObraDeArtes[tamañoInicial];
-		
+	
 	}
 
 	
@@ -39,6 +36,13 @@ public abstract class ObraDeArtes {
 	@Override
 	public abstract String toString();
 
+	public void crearColeccionObras() {
+		
+	     int tamañoInicial = 1;
+		
+		array = new ObraDeArtes[tamañoInicial];
+		
+	}
 	public void añadirObra(ObraDeArtes obra) {
 	
 		array[array.length-1] = obra;
