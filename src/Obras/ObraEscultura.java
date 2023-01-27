@@ -4,7 +4,6 @@ public class ObraEscultura extends ObraDeArtes{
 	
 	private String material;
 	
-	
 	public ObraEscultura(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
 			int piezas, String descripcion, String material) {
 		
