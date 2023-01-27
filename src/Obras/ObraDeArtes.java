@@ -40,8 +40,20 @@ public abstract class ObraDeArtes {
 
 
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
 	public String getNombre() {
 		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 
@@ -52,8 +64,20 @@ public abstract class ObraDeArtes {
 
 
 
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+
+
 	public String getTipo() {
 		return tipo;
+	}
+
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 
@@ -64,8 +88,20 @@ public abstract class ObraDeArtes {
 
 
 
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+
+
 	public double getAltura() {
 		return altura;
+	}
+
+
+
+	public void setAltura(double altura) {
+		this.altura = altura;
 	}
 
 
@@ -76,8 +112,20 @@ public abstract class ObraDeArtes {
 
 
 
-	public double getPiezas() {
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+
+
+	public int getPiezas() {
 		return piezas;
+	}
+
+
+
+	public void setPiezas(int piezas) {
+		this.piezas = piezas;
 	}
 
 
@@ -86,6 +134,13 @@ public abstract class ObraDeArtes {
 		return descripcion;
 	}
 
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+    
 
 	
 
