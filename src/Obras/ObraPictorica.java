@@ -5,6 +5,7 @@ public class ObraPictorica extends ObraDeArtes{
 	
 	private String tecnica;
 	
+	
 	public ObraPictorica(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
 			int piezas, String descripcion,String tecnica) {
 		
