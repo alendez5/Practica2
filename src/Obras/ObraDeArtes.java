@@ -12,8 +12,8 @@ public abstract class ObraDeArtes {
 	private double peso;
 	private int piezas;
 	private String descripcion;
-	private ObraDeArtes array[];
-	private ObraDeArtes arrayAux[];
+	private static ObraDeArtes array[];
+	private static ObraDeArtes arrayAux[];
 	
 	public ObraDeArtes(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
 			int piezas, String descripcion) {
@@ -36,14 +36,14 @@ public abstract class ObraDeArtes {
 	@Override
 	public abstract String toString();
 
-	public void crearColeccionObras() {
+	public static void crearColeccionObras() {
 		
 	     int tamañoInicial = 1;
 		
 		array = new ObraDeArtes[tamañoInicial];
 		
 	}
-	public void añadirObra(ObraDeArtes obra) {
+	public static void añadirObra(ObraDeArtes obra) {
 	
 		array[array.length-1] = obra;
 		
