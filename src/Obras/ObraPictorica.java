@@ -30,6 +30,16 @@ public class ObraPictorica extends ObraDeArtes{
 		return list.toString();
 		
 	}
+
+	public String getTecnica() {
+		return tecnica;
+	}
+
+	public void setTecnica(String tecnica) {
+		this.tecnica = tecnica;
+	}
+	
+	
 	
 	
 
