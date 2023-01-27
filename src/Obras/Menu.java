@@ -24,7 +24,12 @@ public class Menu {
 	 ObraEscultura obraE = null;
 	 
 	 
-	 
+	 public Menu() {
+		 
+		 ObraDeArtes.crearColeccionObras();
+		 
+		 
+	 }
 	 
 	 
 	 private void añadirObra() {
@@ -70,14 +75,20 @@ public class Menu {
 		 System.out.println("Introduce una descripción: ");
 		 descripcion = entrada.nextLine();
 		 
-		if(esPictorica)
+		if(esPictorica) {
 			obraP = new ObraPictorica(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, tecnica);
-		else if(esEscultura)
+			ObraDeArtes.añadirObra(obraP);
+		}	
+		else if(esEscultura) {
 			obraE = new ObraEscultura(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, material); 
+			ObraDeArtes.añadirObra(obraE);
+		}
 		
 		 
 		 
 	 }
+	 
+	 
 	
 	
 }
