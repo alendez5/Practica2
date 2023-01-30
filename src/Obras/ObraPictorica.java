@@ -23,7 +23,7 @@ public class ObraPictorica extends ObraDeArtes{
 		list.append("Autor : " + getAutor() + "\n");
 		list.append("Precio : " + getPrecio() + "\n");
 		list.append("Altura : " + getAltura() + "\n");	
-		list.append("Peso : " + getNombre() + "\n");
+		list.append("Peso : " + getPeso() + "\n");
 		list.append("Numero de piezas : " + getPiezas() + "\n");
 		list.append("Descripcion : " + getDescripcion() + "\n");
 		list.append("Tecnica : " + tecnica + "\n");

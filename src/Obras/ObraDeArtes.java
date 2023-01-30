@@ -12,6 +12,10 @@ public abstract class ObraDeArtes {
 	private double peso;
 	private int piezas;
 	private String descripcion;
+	private static ObraDeArtes array[];
+
+
+	private static ObraDeArtes arrayAux[];
 	
 	public ObraDeArtes(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
 			int piezas, String descripcion) {
@@ -25,6 +29,8 @@ public abstract class ObraDeArtes {
 		this.peso = peso;
 		this.piezas = piezas;
 		this.descripcion = descripcion;
+		
+	
 	}
 
 	
@@ -32,8 +38,29 @@ public abstract class ObraDeArtes {
 	@Override
 	public abstract String toString();
 
+	public static void crearColeccionObras() {
+		
+	     int tamañoInicial = 1;
+		
+		array = new ObraDeArtes[tamañoInicial];
+		
+	}
+	public static void añadirObra(ObraDeArtes obra) {
+	
+		array[array.length-1] = obra;
+		
+		arrayAux = new ObraDeArtes[array.length+1];
+		
+		for(int i =0; i < array.length;i++)
+			arrayAux[i] = array[i];
+		
+		array = arrayAux;
+	
+		
+		
+	}
 
-
+	
 	public int getId() {
 		return id;
 	}
@@ -140,7 +167,11 @@ public abstract class ObraDeArtes {
 		this.descripcion = descripcion;
 	}
 
-    
+	public static ObraDeArtes[] getArray() {
+		return array;
+	}
+
+
 
 	
 
