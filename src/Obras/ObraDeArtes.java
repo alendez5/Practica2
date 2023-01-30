@@ -13,6 +13,8 @@ public abstract class ObraDeArtes {
 	private int piezas;
 	private String descripcion;
 	private static ObraDeArtes array[];
+
+
 	private static ObraDeArtes arrayAux[];
 	
 	public ObraDeArtes(int id, String nombre, String autor, String tipo, double precio, double altura, double peso,
@@ -165,7 +167,11 @@ public abstract class ObraDeArtes {
 		this.descripcion = descripcion;
 	}
 
-    
+	public static ObraDeArtes[] getArray() {
+		return array;
+	}
+
+
 
 	
 
