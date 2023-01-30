@@ -4,25 +4,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-	
-	 int id;
-	 int piezas;
-	 String nombre;
-	 String autor;
-	 String tipo;
-	 String descripcion;
-	 String tecnica = null;
-	 String material = null;
-	 double precio;
-	 double altura;
-	 double peso;
-	 boolean esPictorica = false;
-	 boolean esEscultura = false;
-	 Scanner entrada = new Scanner(System.in);
-	 ObraDeArtes array[] = new ObraDeArtes[10];
-	 ObraPictorica obraP = null;
-	 ObraEscultura obraE = null;
-	 
 	 
 	 public Menu() {
 		 
@@ -33,6 +14,23 @@ public class Menu {
 	 
 	  public void añadirObra() {
 		 
+		 int id;
+	     int piezas;
+		 String nombre;
+		 String autor;
+		 String tipo;
+		 String descripcion;
+		 String tecnica = null;
+		 String material = null;
+		 double precio;
+		 double altura;
+		 double peso;
+		 boolean esPictorica = false;
+		 boolean esEscultura = false;
+			
+		 ObraPictorica obraP = null;
+		 ObraEscultura obraE = null;
+		
 		 Scanner entrada = new Scanner(System.in);
 		 
 		 System.out.println("Introduce el id :");
@@ -86,19 +84,48 @@ public class Menu {
 		 
 		 
 	 }
+	   
 	  
 	 public void mostrarObras() {
 		 
 		 ObraDeArtes[] array =  ObraDeArtes.getArray();
 		 
 
-		 for(int i = 0; i < ObraDeArtes.getArray().length-1;i++) {
+		 for (int i = 0; i < array.length-1;i++) {
 			System.out.println(array[i].toString());
 		 }
 		 
 	 }
 	 
-	 
+	 public void modificarObra() {
+		
+		 
+		 Scanner entrada = new Scanner(System.in);
+		 ObraDeArtes[] array = ObraDeArtes.getArray();
+		 ObraDeArtes obra = null;
+		 String nombre;
+		 String autor;
+
+		 System.out.println("Introduce el nombre de la obra: ");
+		 nombre = entrada.nextLine();
+		 
+		 System.out.println("Introduce el nombre del autor: ");
+		 autor = entrada.nextLine();
+		 
+		 for (int i = 0; i < ObraDeArtes.getArray().length-1;i++) {
+			if(array[i].getNombre().equalsIgnoreCase(nombre) && array[i].getAutor().equalsIgnoreCase(autor)) {
+				obra = array[i];
+			}
+		 }
+		 
+		 if(obra == null)
+			 System.out.println("No existe una obra con esos datos");
+		 else {
+			 System.out.println("Obra encontrada!");
+			 obra.modificarDatos();
+			
+		 }
+	 }
 	
 	
 }
