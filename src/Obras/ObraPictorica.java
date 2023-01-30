@@ -1,5 +1,6 @@
 package Obras;
 
+import java.util.Scanner;
 
 public class ObraPictorica extends ObraDeArtes{
 	
@@ -15,6 +16,44 @@ public class ObraPictorica extends ObraDeArtes{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void modificarDatos() {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Introduce el nuevo id: ");
+        setId(entrada.nextInt());
+        entrada.nextLine();
+        
+    	System.out.println("Introduce el nuevo nombre: ");
+        setNombre(entrada.nextLine());
+        
+     	System.out.println("Introduce el nuevo autor: ");
+        setAutor(entrada.nextLine());
+        
+        System.out.println("Introduce el nuevo precio: ");
+        setPrecio(entrada.nextDouble());
+        
+        System.out.println("Introduce la nueva altura:");
+        setAltura(entrada.nextDouble());
+        
+        System.out.println("Introduce el nuevo peso: ");
+        setPeso(entrada.nextDouble());
+        
+        System.out.println("Introduce las nuevas piezas: ");
+        setPiezas(entrada.nextInt());
+        entrada.nextLine();
+        
+        System.out.println("Introduce la nueva descripcion: ");
+        setDescripcion(entrada.nextLine());
+        
+        
+        System.out.println("Introduce la nueva tecnica: ");
+        setTecnica(entrada.nextLine());
+        
+	
+	}
+	
 	@Override
 	public String toString() {
 		
@@ -39,8 +78,8 @@ public class ObraPictorica extends ObraDeArtes{
 	public void setTecnica(String tecnica) {
 		this.tecnica = tecnica;
 	}
-	
-	
+
+
 	
 	
 
