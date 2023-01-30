@@ -58,6 +58,7 @@ public class ObraPictorica extends ObraDeArtes{
 	public String toString() {
 		
 		StringBuilder list = new StringBuilder();
+		list.append("Id : " + getId() + "\n");
 		list.append("Nombre : " + getNombre() + "\n");
 		list.append("Autor : " + getAutor() + "\n");
 		list.append("Precio : " + getPrecio() + "\n");
