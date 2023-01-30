@@ -37,6 +37,8 @@ public abstract class ObraDeArtes {
 
 	@Override
 	public abstract String toString();
+	
+	public abstract void modificarDatos();
 
 	public static void crearColeccionObras() {
 		
