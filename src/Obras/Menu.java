@@ -31,8 +31,7 @@ public class Menu {
 		 
 	 }
 	 
-	 
-	 private void añadirObra() {
+	  public void añadirObra() {
 		 
 		 Scanner entrada = new Scanner(System.in);
 		 
@@ -85,6 +84,17 @@ public class Menu {
 		}
 		
 		 
+		 
+	 }
+	  
+	 public void mostrarObras() {
+		 
+		 ObraDeArtes[] array =  ObraDeArtes.getArray();
+		 
+
+		 for(int i = 0; i < ObraDeArtes.getArray().length-1;i++) {
+			System.out.println(array[i].toString());
+		 }
 		 
 	 }
 	 
