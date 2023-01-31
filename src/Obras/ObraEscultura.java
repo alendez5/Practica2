@@ -20,31 +20,7 @@ public class ObraEscultura extends ObraDeArtes{
 		
 		Scanner entrada = new Scanner(System.in);
 		
-		System.out.println("Introduce el nuevo id: ");
-        setId(entrada.nextInt());
-        entrada.nextLine();
-        
-    	System.out.println("Introduce el nuevo nombre: ");
-        setNombre(entrada.nextLine());
-        
-     	System.out.println("Introduce el nuevo autor: ");
-        setAutor(entrada.nextLine());
-        
-        System.out.println("Introduce el nuevo precio: ");
-        setPrecio(entrada.nextDouble());
-        
-        System.out.println("Introduce la nueva altura:");
-        setAltura(entrada.nextDouble());
-        
-        System.out.println("Introduce el nuevo peso: ");
-        setPeso(entrada.nextDouble());
-        
-        System.out.println("Introduce las nuevas piezas: ");
-        setPiezas(entrada.nextInt());
-        entrada.nextLine();
-        
-        System.out.println("Introduce la nueva descripcion: ");
-        setDescripcion(entrada.nextLine());
+		super.modificarDatos();
         
         
         System.out.println("Introduce el nuevo material: ");

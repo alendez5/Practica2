@@ -1,5 +1,7 @@
 package Obras;
 
+import java.util.Scanner;
+
 public abstract class ObraDeArtes {
 	
 	
@@ -51,7 +53,37 @@ public abstract class ObraDeArtes {
 		
 	}
 	
-	public abstract void modificarDatos();
+	public void modificarDatos() {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Introduce el nuevo id: ");
+        setId(entrada.nextInt());
+        entrada.nextLine();
+        
+    	System.out.println("Introduce el nuevo nombre: ");
+        setNombre(entrada.nextLine());
+        
+     	System.out.println("Introduce el nuevo autor: ");
+        setAutor(entrada.nextLine());
+        
+        System.out.println("Introduce el nuevo precio: ");
+        setPrecio(entrada.nextDouble());
+        
+        System.out.println("Introduce la nueva altura:");
+        setAltura(entrada.nextDouble());
+        
+        System.out.println("Introduce el nuevo peso: ");
+        setPeso(entrada.nextDouble());
+        
+        System.out.println("Introduce las nuevas piezas: ");
+        setPiezas(entrada.nextInt());
+        entrada.nextLine();
+        
+        System.out.println("Introduce la nueva descripcion: ");
+        setDescripcion(entrada.nextLine());
+        
+	}
 	
 	public abstract void calcularPrecio();
 
