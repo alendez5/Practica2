@@ -17,8 +17,19 @@ public class ObraPictorica extends ObraDeArtes{
 	}
 
 	@Override
-	public void calcularPrecio() {
-		// TODO Auto-generated method stub
+	public void mostrarPrecioFinal() {
+		
+		double precioDeVenta = super.obtenerPrecio();
+		double precioFinal,descuento = 0.10;
+		
+		precioFinal = precioDeVenta - (precioDeVenta * descuento );
+		System.out.println("Descuento(10% pictorica): "+precioDeVenta * descuento);
+		
+		
+		System.out.println("Precio final de venta(€): "+ precioFinal);
+		
+		
+		
 		
 	}
 	
