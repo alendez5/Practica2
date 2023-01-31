@@ -35,7 +35,7 @@ public abstract class ObraDeArtes {
 	
 	}
 
-	
+	public abstract void mostrarPrecioFinal();
 
 	public String toString() {
 		
@@ -85,7 +85,43 @@ public abstract class ObraDeArtes {
         
 	}
 	
-	public abstract void calcularPrecio();
+	public double obtenerPrecio() {
+		
+		double aux, precioDeVenta;
+		
+		System.out.println("Nombre :"+nombre);
+		System.out.println("Altura(m): " + altura);
+		System.out.println("Peso(t): "+peso);
+		System.out.println("Numero de piezas : " + piezas);
+		System.out.println("Precio(€): "+precio);
+		
+		aux = precio*0.25;
+		precioDeVenta = precio + aux;
+		
+		System.out.println("Comisión galería: "+aux);
+		
+		aux = peso > 1 ? 100 :20 ;
+		precioDeVenta = precioDeVenta+aux;
+		
+		System.out.println("Importe por peso: "+aux);
+		
+		aux =  altura > 1 ? 100 :20 ;
+		precioDeVenta = precioDeVenta+aux;
+		
+		System.out.println("Importe por altura: "+aux);
+		
+		if(piezas > 2) {
+			for(int i = 3 ; i <= piezas;i++) {
+				
+				precioDeVenta = precioDeVenta + 10;
+				System.out.println("Importe adicional - Pieza "+i+"(€): 10");
+				
+			}
+		}
+		
+		System.out.println("Precio de venta(€): "+ precioDeVenta);
+		return precioDeVenta;
+	}
 
 	public static void crearColeccionObras() {
 		
@@ -105,7 +141,7 @@ public abstract class ObraDeArtes {
 		
 		array = arrayAux;
 	
-		
+
 		
 	}
 
