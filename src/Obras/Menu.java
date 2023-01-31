@@ -108,6 +108,7 @@ public class Menu {
 		 else {
 			 
 			 System.out.println("Obra encontrada!");
+			 System.out.println();
 			 obra.modificarDatos();
 			
 		 }
@@ -122,6 +123,7 @@ public class Menu {
 		 else {
 			 
 			 System.out.println("Obra encontrada!");
+			 System.out.println();
 			 System.out.println(obra);
 			
 		 }
@@ -137,10 +139,31 @@ public class Menu {
 		 else {
 			 
 			 System.out.println("Obra encontrada!");
+			 System.out.println();
 			 obra.mostrarPrecioFinal();
 			
 		 }
 		 
+		 
+		 
+	 }
+	 
+	 public void imprimirEtiqueta() {
+		 
+         ObraDeArtes obra = obtenerObra();
+		 
+		 if(obra == null)
+			 System.out.println("No existe una obra con esos datos");
+		 else {
+			 
+			 System.out.println("Obra encontrada!");
+			 System.out.println();
+			 
+			 System.out.println(obra.getNombre());
+			 System.out.println(obra.getAutor());
+			 System.out.println(obra.getDescripcion());
+			
+		 }
 		 
 		 
 	 }
