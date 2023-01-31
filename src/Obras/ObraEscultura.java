@@ -51,22 +51,23 @@ public class ObraEscultura extends ObraDeArtes{
         setMaterial(entrada.nextLine());
 		
 	}
+	
+	@Override
+	public void calcularPrecio() {
+	
+		
+	}
 
 	@Override
 	public String toString() {
 		
+		
 		StringBuilder list = new StringBuilder();
-		list.append("Id : " + getId() + "\n");
-		list.append("Nombre : " + getNombre() + "\n");
-		list.append("Autor : " + getAutor() + "\n");
-		list.append("Precio : " + getPrecio() + "\n");
-		list.append("Altura : " + getAltura() + "\n");	
-		list.append("Peso : " + getPeso() + "\n");
-		list.append("Numero de piezas : " + getPiezas() + "\n");
-		list.append("Descripcion : " + getDescripcion() + "\n");
+		list.append(super.toString());
 		list.append("Material : " + material + "\n");
 		
 		return list.toString();
+		
 		
 	}
 
@@ -77,6 +78,8 @@ public class ObraEscultura extends ObraDeArtes{
 	public void setMaterial(String material) {
 		this.material = material;
 	}
+
+
 
 
 	
