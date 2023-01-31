@@ -20,31 +20,7 @@ public class ObraEscultura extends ObraDeArtes{
 		
 		Scanner entrada = new Scanner(System.in);
 		
-		System.out.println("Introduce el nuevo id: ");
-        setId(entrada.nextInt());
-        entrada.nextLine();
-        
-    	System.out.println("Introduce el nuevo nombre: ");
-        setNombre(entrada.nextLine());
-        
-     	System.out.println("Introduce el nuevo autor: ");
-        setAutor(entrada.nextLine());
-        
-        System.out.println("Introduce el nuevo precio: ");
-        setPrecio(entrada.nextDouble());
-        
-        System.out.println("Introduce la nueva altura:");
-        setAltura(entrada.nextDouble());
-        
-        System.out.println("Introduce el nuevo peso: ");
-        setPeso(entrada.nextDouble());
-        
-        System.out.println("Introduce las nuevas piezas: ");
-        setPiezas(entrada.nextInt());
-        entrada.nextLine();
-        
-        System.out.println("Introduce la nueva descripcion: ");
-        setDescripcion(entrada.nextLine());
+		super.modificarDatos();
         
         
         System.out.println("Introduce el nuevo material: ");
@@ -53,7 +29,20 @@ public class ObraEscultura extends ObraDeArtes{
 	}
 	
 	@Override
-	public void calcularPrecio() {
+	public void mostrarPrecioFinal() {
+		
+		double precioDeVenta = super.obtenerPrecio();
+		double precioFinal,descuento = 0.20, sobreCoste = 50;
+		
+		precioFinal = precioDeVenta - (precioDeVenta * descuento );
+		System.out.println("Descuento(20% escultura): "+precioDeVenta * descuento);
+		
+		precioFinal = precioFinal + sobreCoste;
+		System.out.println("Sobrecoste escultura): "+sobreCoste);
+		
+		
+		System.out.println("Precio final de venta(€): "+ precioDeVenta);
+		
 	
 		
 	}
