@@ -145,6 +145,19 @@ public abstract class ObraDeArtes {
 		
 	}
 
+	private boolean buscarId(int id) {
+		
+		boolean seRepite = false;
+		
+		for(int i = 0; i < ObraDeArtes.array.length;i++) {
+			
+			if(id == ObraDeArtes.array[i].getId())
+				seRepite = true;
+		}
+		
+		
+		return seRepite;
+	}
 	
 	public int getId() {
 		return id;
