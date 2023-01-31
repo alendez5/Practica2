@@ -17,6 +17,12 @@ public class ObraPictorica extends ObraDeArtes{
 	}
 
 	@Override
+	public void calcularPrecio() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
 	public void modificarDatos() {
 		
 		Scanner entrada = new Scanner(System.in);
@@ -58,14 +64,7 @@ public class ObraPictorica extends ObraDeArtes{
 	public String toString() {
 		
 		StringBuilder list = new StringBuilder();
-		list.append("Id : " + getId() + "\n");
-		list.append("Nombre : " + getNombre() + "\n");
-		list.append("Autor : " + getAutor() + "\n");
-		list.append("Precio : " + getPrecio() + "\n");
-		list.append("Altura : " + getAltura() + "\n");	
-		list.append("Peso : " + getPeso() + "\n");
-		list.append("Numero de piezas : " + getPiezas() + "\n");
-		list.append("Descripcion : " + getDescripcion() + "\n");
+		list.append(super.toString());
 		list.append("Tecnica : " + tecnica + "\n");
 		
 		return list.toString();
@@ -79,6 +78,7 @@ public class ObraPictorica extends ObraDeArtes{
 	public void setTecnica(String tecnica) {
 		this.tecnica = tecnica;
 	}
+
 
 
 	

@@ -35,10 +35,25 @@ public abstract class ObraDeArtes {
 
 	
 
-	@Override
-	public abstract String toString();
+	public String toString() {
+		
+		StringBuilder list = new StringBuilder();
+		list.append("Id : " + getId() + "\n");
+		list.append("Nombre : " + getNombre() + "\n");
+		list.append("Autor : " + getAutor() + "\n");
+		list.append("Precio : " + getPrecio() + "\n");
+		list.append("Altura : " + getAltura() + "\n");	
+		list.append("Peso : " + getPeso() + "\n");
+		list.append("Numero de piezas : " + getPiezas() + "\n");
+		list.append("Descripcion : " + getDescripcion() + "\n");
+		
+		return list.toString();
+		
+	}
 	
 	public abstract void modificarDatos();
+	
+	public abstract void calcularPrecio();
 
 	public static void crearColeccionObras() {
 		
