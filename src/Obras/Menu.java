@@ -36,6 +36,7 @@ public class Menu {
 		 System.out.println("Introduce el id :");
 		 id = entrada.nextInt();
 		 entrada.nextLine();
+		 
 		 System.out.println("Introduce el nombre :");
 		 nombre = entrada.nextLine();
 		 
@@ -100,31 +101,69 @@ public class Menu {
 	 public void modificarObra() {
 		
 		 
-		 Scanner entrada = new Scanner(System.in);
-		 ObraDeArtes[] array = ObraDeArtes.getArray();
-		 ObraDeArtes obra = null;
-		 String nombre;
-		 String autor;
-
-		 System.out.println("Introduce el nombre de la obra: ");
-		 nombre = entrada.nextLine();
-		 
-		 System.out.println("Introduce el nombre del autor: ");
-		 autor = entrada.nextLine();
-		 
-		 for (int i = 0; i < ObraDeArtes.getArray().length-1;i++) {
-			if(array[i].getNombre().equalsIgnoreCase(nombre) && array[i].getAutor().equalsIgnoreCase(autor)) {
-				obra = array[i];
-			}
-		 }
+		 ObraDeArtes obra = obtenerObra();
 		 
 		 if(obra == null)
 			 System.out.println("No existe una obra con esos datos");
 		 else {
+			 
 			 System.out.println("Obra encontrada!");
 			 obra.modificarDatos();
 			
 		 }
+	 }
+	 
+	 public void visualizarObra() {
+		 
+		 ObraDeArtes obra = obtenerObra();
+		 
+		 if(obra == null)
+			 System.out.println("No existe una obra con esos datos");
+		 else {
+			 
+			 System.out.println("Obra encontrada!");
+			 System.out.println(obra);
+			
+		 }
+
+	 }
+	 
+	 public void obtenerPrecio() {
+		 
+		 ObraDeArtes obra = obtenerObra();
+		 
+		 if(obra == null)
+			 System.out.println("No existe una obra con esos datos");
+		 else {
+			 
+			 System.out.println("Obra encontrada!");
+			 obra.mostrarPrecioFinal();
+			
+		 }
+		 
+		 
+		 
+	 }
+	 
+	 private ObraDeArtes obtenerObra() {
+		 
+		 Scanner entrada = new Scanner(System.in);
+		 ObraDeArtes[] array = ObraDeArtes.getArray();
+		 ObraDeArtes obra = null;
+		 int id;
+
+		 System.out.println("Introduce el id de la obra: ");
+		 id = entrada.nextInt();
+		 
+
+		 for (int i = 0; i < ObraDeArtes.getArray().length-1;i++) {
+			if(array[i].getId() == id) {
+				obra = array[i];
+			}
+		 }
+	
+		 
+		 return obra;
 	 }
 	
 	
