@@ -131,6 +131,9 @@ public abstract class ObraDeArtes {
 		
 	}
 	public static void añadirObra(ObraDeArtes obra) {
+		
+		if(buscarId(obra.getId()))
+			throw new IllegalArgumentException("Error: El id" + obra.getId()+ " ya existe");
 	
 		array[array.length-1] = obra;
 		
@@ -145,14 +148,16 @@ public abstract class ObraDeArtes {
 		
 	}
 
-	private boolean buscarId(int id) {
+	public static boolean buscarId(int id) {
 		
 		boolean seRepite = false;
 		
 		for(int i = 0; i < ObraDeArtes.array.length;i++) {
 			
-			if(id == ObraDeArtes.array[i].getId())
-				seRepite = true;
+			if(ObraDeArtes.array[i]!= null)
+				if(id == ObraDeArtes.array[i].getId())
+					seRepite = true;
+			
 		}
 		
 		

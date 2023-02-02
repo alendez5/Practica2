@@ -37,6 +37,9 @@ public class Menu {
 		 id = entrada.nextInt();
 		 entrada.nextLine();
 		 
+		 if(ObraDeArtes.buscarId(id))
+			 throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
+		 
 		 System.out.println("Introduce el nombre :");
 		 nombre = entrada.nextLine();
 		 
@@ -46,6 +49,9 @@ public class Menu {
 		 System.out.println("Introduce el tipo :");
 		 tipo = entrada.nextLine().trim();
 		 
+		 	if(!tipo.equalsIgnoreCase("escultura")  || tipo.equalsIgnoreCase("pictorica"))
+		 		throw new IllegalArgumentException("tipo incorrecto, debe ser escultura o pictorica");
+		 	
 		 	if(tipo.equalsIgnoreCase("Pictorica")) {
 		 		System.out.println("Introduce la tecnica :");
 				tecnica = entrada.nextLine().trim();
@@ -74,13 +80,18 @@ public class Menu {
 		 descripcion = entrada.nextLine();
 		 
 		if(esPictorica) {
+			
 			obraP = new ObraPictorica(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, tecnica);
 			ObraDeArtes.añadirObra(obraP);
+	
 		}	
 		else if(esEscultura) {
+			
 			obraE = new ObraEscultura(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, material); 
 			ObraDeArtes.añadirObra(obraE);
-		}
+		
+		}	
+		
 		
 		 
 		 

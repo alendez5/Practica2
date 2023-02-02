@@ -14,12 +14,17 @@ public class Main {
 		ObraDeArtes obra4 = new ObraPictorica(4,"Retrato de Dora Maar", "P.Picasso","Pictorica",1,1,0.8,1,"Óleo","Óleo");		
 		ObraDeArtes obra5 = new ObraEscultura(5,"El piel roja", "U.Checa","Escultura",350,1,0.8,1,"Escultura","Escultura");
 	
-		ObraDeArtes.añadirObra(obra1);
-		ObraDeArtes.añadirObra(obra2);
-		ObraDeArtes.añadirObra(obra3);
-		ObraDeArtes.añadirObra(obra4);
-		ObraDeArtes.añadirObra(obra5);
-	
+		try {
+			ObraDeArtes.añadirObra(obra1);
+			ObraDeArtes.añadirObra(obra2);
+			ObraDeArtes.añadirObra(obra3);
+			ObraDeArtes.añadirObra(obra4);
+			ObraDeArtes.añadirObra(obra5);
+		}
+		catch(IllegalArgumentException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
 		Scanner entrada = new Scanner(System.in);
 		int opcion;
 	    boolean salir = false;
@@ -42,8 +47,15 @@ public class Main {
 	    		System.out.println("Introduce una opcion valida");
 	    	else if(opcion == 1)
 	    		menu.mostrarObras();
-	    	else if (opcion == 2)
-	    		menu.añadirObra();
+	    	else if (opcion == 2) {
+	    		try {
+	    			menu.añadirObra();
+	    		}
+	    		catch(IllegalArgumentException ex) {
+	    			System.out.println(ex.getMessage());
+	    		}
+	    		
+	    	}	
 	    	else if(opcion == 3)
 	    	    menu.modificarObra();
 	    	else if(opcion == 4)
