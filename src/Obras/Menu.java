@@ -49,6 +49,9 @@ public class Menu {
 		 System.out.println("Introduce el tipo :");
 		 tipo = entrada.nextLine().trim();
 		 
+		 	if(!tipo.equalsIgnoreCase("escultura")  || tipo.equalsIgnoreCase("pictorica"))
+		 		throw new IllegalArgumentException("tipo incorrecto, debe ser escultura o pictorica");
+		 	
 		 	if(tipo.equalsIgnoreCase("Pictorica")) {
 		 		System.out.println("Introduce la tecnica :");
 				tecnica = entrada.nextLine().trim();
