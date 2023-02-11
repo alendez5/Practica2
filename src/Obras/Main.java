@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Menu menu = new Menu();
+		ObraDeArtes.crearColeccionObras();
 		
 		ObraDeArtes obra1 = new ObraPictorica(1,"Guernica", "P.Picasso","Pictorica",1000,5,2,5,"Cuadro guerra civil","Óleo");		
 		ObraDeArtes obra2 = new ObraPictorica(2,"La vie", "P.Picasso","Pictorica",200,1,1,1,"Óleo","Óleo");	
@@ -47,7 +48,9 @@ public class Main {
 	    		System.out.println("Introduce una opcion valida");
 	    	else if(opcion == 1)
 	    		menu.mostrarObras();
+	    	
 	    	else if (opcion == 2) {
+	    		
 	    		try {
 	    			menu.añadirObra();
 	    		}
@@ -58,12 +61,16 @@ public class Main {
 	    	}	
 	    	else if(opcion == 3)
 	    	    menu.modificarObra();
+	    	
 	    	else if(opcion == 4)
 	    		menu.visualizarObra();
+	    	
 	    	else if(opcion == 5)
 	    		menu.obtenerPrecio();
+	    	
 	    	else if(opcion == 6)
 	    		menu.imprimirEtiqueta();
+	    	
 	    	else if(opcion == 0) {
 	    		salir = true;
 	    		System.out.println("Saliendo de la aplicacion..");
