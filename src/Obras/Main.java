@@ -1,5 +1,6 @@
 package Obras;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -54,10 +55,12 @@ public class Main {
 	    		try {
 	    			menu.añadirObra();
 	    		}
-	    		catch(IllegalArgumentException ex) {
+	    		catch(IllegalArgumentException ex ) {
 	    			System.out.println(ex.getMessage());
 	    		}
-	    		
+	    		catch(InputMismatchException ex2) {
+	    			System.out.println(ex2.getMessage());
+	    		}
 	    	}	
 	    	else if(opcion == 3) {
 	    		
@@ -66,6 +69,9 @@ public class Main {
 	    		}
 	    		catch(IllegalArgumentException ex) {
 	    			System.out.println(ex.getMessage());
+	    		}
+	    		catch(InputMismatchException ex) {
+	    			System.out.println("Tipo incompatible");
 	    		}
 	    	}
 	    	   
