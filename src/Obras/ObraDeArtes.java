@@ -58,8 +58,14 @@ public abstract class ObraDeArtes {
 		Scanner entrada = new Scanner(System.in);
 		
 		System.out.println("Introduce el nuevo id: ");
-        setId(entrada.nextInt());
+		try {
+			setId(entrada.nextInt());
+		}
+		catch(IllegalArgumentException ex) {
+			throw new IllegalArgumentException(ex.getMessage());
+		}
         entrada.nextLine();
+        
         
     	System.out.println("Introduce el nuevo nombre: ");
         setNombre(entrada.nextLine());
@@ -171,7 +177,11 @@ public abstract class ObraDeArtes {
 
 
 	public void setId(int id) {
+		
+	   if(ObraDeArtes.buscarId(id))
+	     throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
 		this.id = id;
+		
 	}
 
 
