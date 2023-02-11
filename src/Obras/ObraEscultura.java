@@ -29,9 +29,9 @@ public class ObraEscultura extends ObraDeArtes{
 	}
 	
 	@Override
-	public void mostrarPrecioFinal() {
+	public double obtenerPrecioFinal() {
 		
-		double precioDeVenta = super.obtenerPrecio();
+		double precioDeVenta = super.obtenerPrecioDeVenta();
 		double precioFinal,descuento = 0.20, sobreCoste = 50;
 		
 		precioFinal = precioDeVenta - (precioDeVenta * descuento );
@@ -41,7 +41,7 @@ public class ObraEscultura extends ObraDeArtes{
 		System.out.println("Sobrecoste escultura): "+sobreCoste);
 		
 		
-		System.out.println("Precio final de venta(€): "+ precioDeVenta);
+		return  precioFinal;
 		
 	
 		
