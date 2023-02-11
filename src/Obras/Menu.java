@@ -1,17 +1,11 @@
 package Obras;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
-	 
-	 public Menu() {
-		 
-		 ObraDeArtes.crearColeccionObras();
-		 
-		 
-	 }
-	 
+
 	  public void añadirObra() {
 		 
 		 int id;
@@ -33,66 +27,69 @@ public class Menu {
 		
 		 Scanner entrada = new Scanner(System.in);
 		 
-		 System.out.println("Introduce el id :");
-		 id = entrada.nextInt();
-		 entrada.nextLine();
-		 
-		 if(ObraDeArtes.buscarId(id))
-			 throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
-		 
-		 System.out.println("Introduce el nombre :");
-		 nombre = entrada.nextLine();
-		 
-		 System.out.println("Introduce el autor :");
-		 autor = entrada.nextLine();
-		 
-		 System.out.println("Introduce el tipo :");
-		 tipo = entrada.nextLine().trim();
-		 
-		 	if(!tipo.equalsIgnoreCase("escultura")  || tipo.equalsIgnoreCase("pictorica"))
-		 		throw new IllegalArgumentException("tipo incorrecto, debe ser escultura o pictorica");
-		 	
-		 	if(tipo.equalsIgnoreCase("Pictorica")) {
-		 		System.out.println("Introduce la tecnica :");
-				tecnica = entrada.nextLine().trim();
-				esPictorica = true;
-		 	}
-		 	else if(tipo.equalsIgnoreCase("Escultura")) {
-		 		System.out.println("Introduce el material :");
-				material = entrada.nextLine().trim();
-				esEscultura = true;
-		 	}
-		 		
-		 System.out.println("Introduce el precio : ");
-		 precio = entrada.nextDouble();
-		 
-		 System.out.println("Introduce la altura :");
-		 altura = entrada.nextDouble();
-		 
-		 System.out.println("Introduce el peso: ");
-		 peso = entrada.nextDouble();
-		 
-		 System.out.println("Introduce el numero de piezas: ");
-		 piezas = entrada.nextInt();
-		 entrada.nextLine();
-		 
-		 System.out.println("Introduce una descripción: ");
-		 descripcion = entrada.nextLine();
-		 
-		if(esPictorica) {
-			
-			obraP = new ObraPictorica(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, tecnica);
-			ObraDeArtes.añadirObra(obraP);
-	
-		}	
-		else if(esEscultura) {
-			
-			obraE = new ObraEscultura(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion, material); 
-			ObraDeArtes.añadirObra(obraE);
-		
-		}	
-		
-		
+			try {
+				System.out.println("Introduce el id :");
+				id = entrada.nextInt();
+				entrada.nextLine();
+
+				if (ObraDeArtes.buscarId(id))
+					throw new IllegalArgumentException("Error: El id" + id + " ya existe");
+
+				System.out.println("Introduce el nombre :");
+				nombre = entrada.nextLine();
+
+				System.out.println("Introduce el autor :");
+				autor = entrada.nextLine();
+
+				System.out.println("Introduce el tipo :");
+				tipo = entrada.nextLine().trim();
+
+				if (!tipo.equalsIgnoreCase("escultura") && !tipo.equalsIgnoreCase("pictorica"))
+					throw new IllegalArgumentException("tipo incorrecto, debe ser escultura o pictorica");
+
+				if (tipo.equalsIgnoreCase("Pictorica")) {
+					System.out.println("Introduce la tecnica :");
+					tecnica = entrada.nextLine().trim();
+					esPictorica = true;
+				} else if (tipo.equalsIgnoreCase("Escultura")) {
+					System.out.println("Introduce el material :");
+					material = entrada.nextLine().trim();
+					esEscultura = true;
+				}
+
+				System.out.println("Introduce el precio : ");
+				precio = entrada.nextDouble();
+
+				System.out.println("Introduce la altura :");
+				altura = entrada.nextDouble();
+
+				System.out.println("Introduce el peso: ");
+				peso = entrada.nextDouble();
+
+				System.out.println("Introduce el numero de piezas: ");
+				piezas = entrada.nextInt();
+				entrada.nextLine();
+
+				System.out.println("Introduce una descripción: ");
+				descripcion = entrada.nextLine();
+
+				if (esPictorica) {
+
+					obraP = new ObraPictorica(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion,
+							tecnica);
+					ObraDeArtes.añadirObra(obraP);
+
+				} else if (esEscultura) {
+
+					obraE = new ObraEscultura(id, nombre, autor, tipo, precio, altura, peso, piezas, descripcion,
+							material);
+					ObraDeArtes.añadirObra(obraE);
+
+				}
+			} 
+			catch (InputMismatchException ex) {
+				throw new InputMismatchException("Tipo incompatible");
+			}
 		 
 		 
 	 }
@@ -120,8 +117,18 @@ public class Menu {
 			 
 			 System.out.println("Obra encontrada!");
 			 System.out.println();
-			 obra.modificarDatos();
+			 
+			try {
+				obra.modificarDatos();
+			} 
+			catch (IllegalArgumentException ex) {
+				throw new IllegalArgumentException(ex.getMessage());
+			}
+			catch (InputMismatchException ex) {
+				throw new InputMismatchException(ex.getMessage());
+			}
 			
+				
 		 }
 	 }
 	 
@@ -151,7 +158,7 @@ public class Menu {
 			 
 			 System.out.println("Obra encontrada!");
 			 System.out.println();
-			 obra.mostrarPrecioFinal();
+			 System.out.println("Precio final de venta(€): "+obra.obtenerPrecioFinal());
 			
 		 }
 		 
