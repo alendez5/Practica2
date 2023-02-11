@@ -178,7 +178,7 @@ public abstract class ObraDeArtes {
 
 	public void setId(int id) {
 		
-	   if(ObraDeArtes.buscarId(id))
+	   if(id != this.id && ObraDeArtes.buscarId(id)  )
 	     throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
 	   
 		this.id = id;
