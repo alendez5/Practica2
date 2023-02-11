@@ -35,7 +35,7 @@ public abstract class ObraDeArtes {
 	
 	}
 
-	public abstract void mostrarPrecioFinal();
+	public abstract double obtenerPrecioFinal();
 
 	public String toString() {
 		
@@ -91,7 +91,7 @@ public abstract class ObraDeArtes {
         
 	}
 	
-	public double obtenerPrecio() {
+	public double obtenerPrecioDeVenta() { // Una función que usan las clases hijas para luego calcular el precio final
 		
 		double aux, precioDeVenta;
 		
@@ -180,6 +180,7 @@ public abstract class ObraDeArtes {
 		
 	   if(ObraDeArtes.buscarId(id))
 	     throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
+	   
 		this.id = id;
 		
 	}
@@ -216,7 +217,7 @@ public abstract class ObraDeArtes {
 
 
 
-	public void setTipo(String tipo) {
+	public void setTipo(String tipo) {		
 		this.tipo = tipo;
 	}
 
