@@ -59,8 +59,16 @@ public class Main {
 	    		}
 	    		
 	    	}	
-	    	else if(opcion == 3)
-	    	    menu.modificarObra();
+	    	else if(opcion == 3) {
+	    		
+	    		try {
+	    			 menu.modificarObra();
+	    		}
+	    		catch(IllegalArgumentException ex) {
+	    			System.out.println(ex.getMessage());
+	    		}
+	    	}
+	    	   
 	    	
 	    	else if(opcion == 4)
 	    		menu.visualizarObra();
