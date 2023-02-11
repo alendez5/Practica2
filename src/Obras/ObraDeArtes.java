@@ -1,5 +1,6 @@
 package Obras;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class ObraDeArtes {
@@ -178,11 +179,13 @@ public abstract class ObraDeArtes {
 
 	public void setId(int id) {
 		
+
 	   if(id != this.id && ObraDeArtes.buscarId(id)  )
 	     throw new IllegalArgumentException("Error: El id" + id+ " ya existe");
-	   
-		this.id = id;
+	   	 
+	   this.id = id;
 		
+	
 	}
 
 
@@ -194,7 +197,9 @@ public abstract class ObraDeArtes {
 
 
 	public void setNombre(String nombre) {
+	
 		this.nombre = nombre;
+		
 	}
 
 
