@@ -35,6 +35,47 @@ public abstract class ObraDeArtes {
 		
 	
 	}
+	
+	public static void crearColeccionObras() {
+		
+	     int tamañoInicial = 1;
+		
+		array = new ObraDeArtes[tamañoInicial];
+		
+	}
+	public static void añadirObra(ObraDeArtes obra) {
+		
+		if(buscarId(obra.getId()))
+			throw new IllegalArgumentException("Error: El id" + obra.getId()+ " ya existe");
+	
+		array[array.length-1] = obra;
+		
+		arrayAux = new ObraDeArtes[array.length+1];
+		
+		for(int i =0; i < array.length;i++)
+			arrayAux[i] = array[i];
+		
+		array = arrayAux;
+	
+
+		
+	}
+
+	public static boolean buscarId(int id) {
+		
+		boolean seRepite = false;
+		
+		for(int i = 0; i < ObraDeArtes.array.length;i++) {
+			
+			if(ObraDeArtes.array[i]!= null)
+				if(id == ObraDeArtes.array[i].getId())
+					seRepite = true;
+			
+		}
+		
+		
+		return seRepite;
+	}
 
 	public abstract double obtenerPrecioFinal();
 
@@ -130,46 +171,7 @@ public abstract class ObraDeArtes {
 		return precioDeVenta;
 	}
 
-	public static void crearColeccionObras() {
-		
-	     int tamañoInicial = 1;
-		
-		array = new ObraDeArtes[tamañoInicial];
-		
-	}
-	public static void añadirObra(ObraDeArtes obra) {
-		
-		if(buscarId(obra.getId()))
-			throw new IllegalArgumentException("Error: El id" + obra.getId()+ " ya existe");
 	
-		array[array.length-1] = obra;
-		
-		arrayAux = new ObraDeArtes[array.length+1];
-		
-		for(int i =0; i < array.length;i++)
-			arrayAux[i] = array[i];
-		
-		array = arrayAux;
-	
-
-		
-	}
-
-	public static boolean buscarId(int id) {
-		
-		boolean seRepite = false;
-		
-		for(int i = 0; i < ObraDeArtes.array.length;i++) {
-			
-			if(ObraDeArtes.array[i]!= null)
-				if(id == ObraDeArtes.array[i].getId())
-					seRepite = true;
-			
-		}
-		
-		
-		return seRepite;
-	}
 	
 	public int getId() {
 		return id;
